@@ -1,0 +1,5 @@
+# Ignorando Diretórios
+
+obj/
+
+bin/
