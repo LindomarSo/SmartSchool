@@ -203,7 +203,7 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:SmartSchool.WebAPI.V2.Controllers.AlunoController.Get">
+        <member name="M:SmartSchool.WebAPI.V2.Controllers.AlunoController.Get(SmartSchool.WebAPI.Helpers.PageParams)">
             <summary>
             Método responsável por retorna uma coleção completa do banco 
             </summary>
