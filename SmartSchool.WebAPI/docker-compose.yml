@@ -1,0 +1,40 @@
+ version: "3.8"
+
+ volumes: 
+  SmartSchoolDb: 
+
+ networks: # Através dessa rede o front precisa se comunicar apenas com API 
+  mysqlNET:
+  smartschoolNET: 
+
+ services: # Listar os meus serviços 
+
+  mysql: # Este é o container da minha aplicação mysql 
+    image: "mysql:5.7"
+    container_name: mysql
+    ports: 
+      - "3306:3306"
+    volumes:
+      - SmartSchoolDb:/var/lib/mysql
+    networks:
+      - mysqlNET
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234 
+      - MYSQL_PASSWORD=1234 
+      - MYSQL_ROOT_HOST=% 
+      - bind-address:0.0.0.0  
+
+  smartschool: # Este é o container da minha aplicação .NET 
+    build: 
+      context: .
+      dockerfile: Dockerfile # Dockerfile que foi criado 
+    container_name: smart # Nome do container 
+    networks:
+      - mysqlNET  
+      - smartschoolNET
+    ports:
+      - 5000:80
+    environment: # Fazer a comunicação entre a aplicação .NET e a aplicação mysql 
+      - DBHOST=mysql
+    depends_on: # Este serviço depende do mysql 
+      - mysql

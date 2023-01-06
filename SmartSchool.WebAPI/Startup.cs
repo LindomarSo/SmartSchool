@@ -36,7 +36,7 @@ namespace SmartSchool.WebAPI
             // Contexto que vai gerenciar a conexão com o banco de dados
             // O SmartContext está recebendo em seu construtor um a connection string
             services.AddDbContext<SmartContext>(
-                context => context.UseSqlite(Configuration.GetConnectionString("Default"))
+                context => context.UseMySql(Configuration.GetConnectionString("MySqlConnection"))
             );
 
             // O auto mapper busca dentro dos assemblies, ou seja, dentro das dll,

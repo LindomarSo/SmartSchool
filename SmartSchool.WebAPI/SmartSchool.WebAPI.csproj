@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <WarningLevel>5</WarningLevel>
+  <!-- </PropertyGroup> -->
+  <!-- <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>5</WarningLevel> -->
     <DocumentationFile>SmartSchool.WebAPI.xml</DocumentationFile>
     <DefineConstants>TRACE</DefineConstants>
     <NoWarn>1701;1702;1591</NoWarn>
@@ -12,7 +12,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0"/>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.0"/>
     <!-- Pacote para corrigir loop do json -->
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.2"/>
     <!-- Pacote do auto mapper -->
